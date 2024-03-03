@@ -197,7 +197,7 @@ namespace GameAnalyticsSDK
             {
                 if (GameAnalytics.SettingsGA.UsePlayerSettingsBuildNumber) {
                     for (int i = 0; i < GameAnalytics.SettingsGA.Platforms.Count; ++i) {
-                        if (GameAnalytics.SettingsGA.Platforms [i] == RuntimePlatform.Android || GameAnalytics.SettingsGA.Platforms [i] == RuntimePlatform.IPhonePlayer) {
+                        if (GameAnalytics.SettingsGA.Platforms [i] == RuntimePlatform.Android || GameAnalytics.SettingsGA.Platforms [i] == RuntimePlatform.IPhonePlayer || GameAnalytics.SettingsGA.Platforms [i] == RuntimePlatform.WebGLPlayer) {
                             GameAnalytics.SettingsGA.Build [i] = Application.version;
                         }
                     }

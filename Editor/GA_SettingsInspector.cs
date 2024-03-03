@@ -877,7 +877,7 @@ namespace GameAnalyticsSDK.Editor
                             switch (GameAnalytics.SettingsGA.UsePlayerSettingsBuildNumber)
                             {
                                 case true:
-                                    if (GameAnalytics.SettingsGA.Platforms[i] != RuntimePlatform.Android && GameAnalytics.SettingsGA.Platforms[i] != RuntimePlatform.IPhonePlayer)
+                                    if (GameAnalytics.SettingsGA.Platforms[i] != RuntimePlatform.Android && GameAnalytics.SettingsGA.Platforms[i] != RuntimePlatform.IPhonePlayer && GameAnalytics.SettingsGA.Platforms[i] != RuntimePlatform.WebGLPlayer)
                                     {
                                         GUILayout.BeginHorizontal();
                                         //GUILayout.Label("", GUILayout.Width(7));
@@ -903,6 +903,11 @@ namespace GameAnalyticsSDK.Editor
 									    ga.Build[i] = PlayerSettings.iOS.buildNumber;
 										EditorGUILayout.HelpBox("Using iOS Player Settings Build number as build number in events. \nBuild number is currently set to \"" + ga.Build[i] + "\".", MessageType.Info);
 #endif
+                                        }
+                                        if (GameAnalytics.SettingsGA.Platforms[i] == RuntimePlatform.WebGLPlayer)
+                                        {
+                                            ga.Build[i] = PlayerSettings.bundleVersion;
+                                            EditorGUILayout.HelpBox("Using WebGL Player Settings Version* number as build number in events. \nBuild number is currently set to \"" + ga.Build[i] + "\".", MessageType.Info);
                                         }
                                     }
                                     break;
