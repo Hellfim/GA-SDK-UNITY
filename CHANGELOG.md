@@ -1,6 +1,22 @@
 Changelog
 ---------
 <!--(CHANGELOG_TOP)-->
+**7.8.0**
+* added optional session performance metrics collection
+* added optional app boot-time metric collection
+* fixed a warning when submitting FPS before initializing the SDK
+* added ad event support for webgl
+
+**7.8.0-beta**
+* beta versionadded optional session performance metrics collection
+* added optional app boot-time metric collection
+
+**7.7.2**
+* added optional external user id:increased resource currency limit from 20 to 50
+
+**7.7.1**
+* fixed a bug in the android user-id generation
+
 **7.7.0**
 * updated impression listeners for AdMob 8.0.0 (please check out the migration guide: https://developers.google.com/admob/unity/migration)
 * added functionality to opt out of GAID & IDFV tracking
